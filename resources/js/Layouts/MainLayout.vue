@@ -1,6 +1,8 @@
 <template>
     <Link href="/">Main Page</Link>
-    <Link href="/hello">Show Page</Link>
+    <Link href="/listing">Listings</Link>
+    <Link href="/listing/create">Create Listings</Link>
+
     <!-- <div>The page with time {{ timer }}</div> -->
     <div v-if="flashSuccess" class="success">
         {{ flashSuccess }}
