@@ -9,7 +9,7 @@
         @vite('resources/js/app.js')
         @inertiaHead
     </head>
-    <body class="antialiased">
+    <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300">
     @inertia <!-- custom directive that comes with inertia -->
     </body>
 </html>
