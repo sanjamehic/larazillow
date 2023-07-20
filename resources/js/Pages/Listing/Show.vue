@@ -35,6 +35,26 @@
                         <div class="text-gray-400">Your monthly payment</div>
                         <Price :price="monthlyPayment" class="text-2xl"/>
                     </div>
+                    <div class="mt-2 text-gray-500">
+                        <div class="flex justify-between">
+                            <div>Total Paid</div>
+                            <div>
+                                <Price :price="totalPaid" class="font-medium" />
+                            </div>
+                        </div>
+                        <div class="flex justify-between">
+                            <div>Principal Paid</div>
+                            <div>
+                                <Price :price="listing.price" class="font-medium" />
+                            </div>
+                        </div>
+                        <div class="flex justify-between">
+                            <div>Interest Paid</div>
+                            <div>
+                                <Price :price="totalInterest" class="font-medium" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </Box>
 
@@ -55,5 +75,5 @@ const duration = ref(25)
 const props = defineProps({
         listing: Object,
     })
-const {monthlyPayment} = useMonthlyPayment(props.listing.price, interestRate, duration)
+const { monthlyPayment, totalPaid, totalInterest } = useMonthlyPayment(props.listing.price, interestRate, duration)
 </script>
