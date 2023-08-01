@@ -1,6 +1,6 @@
 <template>
 
-    <div>Show</div>
+    <div>You can see me</div>
 
 
 </template>
