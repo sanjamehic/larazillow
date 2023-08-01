@@ -4,7 +4,7 @@ v1<template>
 
         <div>
           <label for="name" class="label">Name</label>
-          <input id="name" v-model="form.email" type="text" class="input" />
+          <input id="name" v-model="form.name" type="text" class="input" />
           <div v-if="form.errors.name" class="input-error">{{ form.errors.name }}</div>
 
         </div>
@@ -42,5 +42,5 @@ v1<template>
     password: null,
     password_confirmation: null
   })
-  const register = () => form.post('')
+  const register = () => form.post(route('user-account.store'))
   </script>
