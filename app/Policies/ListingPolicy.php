@@ -12,7 +12,8 @@ class ListingPolicy
     use HandlesAuthorization;
 
     public function before(?User $user, $ability) {
-        if ($user->is_admin) {
+        if ($user?->is_admin) {
+            //? is null safe operator, it checks $user && $user->is_admin
             return true;
         }
     }
