@@ -22,8 +22,6 @@ class ListingController extends Controller
             'priceFrom', 'priceTo', 'beds', 'baths', 'areaFrom', 'areaTo'
         ]);
 
-        $query = Listing::orderByDesc('created_at');
-
         $filters = $request->only([
             'priceFrom', 'priceTo', 'beds', 'baths', 'areaFrom', 'areaTo'
         ]);
@@ -33,7 +31,7 @@ class ListingController extends Controller
             'Listing/Index',
             [
                 'filters' => $filters,
-                'listings' => $query = Listing::orderByDesc('created_at')
+                'listings' => $query = Listing::mostRecent()
                 ->when(
                     $filters['priceFrom'] ?? false,
                     fn($query, $value) => $query->where('price', '>=', $value))
