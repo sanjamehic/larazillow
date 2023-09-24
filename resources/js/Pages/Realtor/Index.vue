@@ -33,5 +33,5 @@ import Price from '@/Components/Price.vue';
 import Box from '@/Components/UI/Box.vue';
 import { Link } from '@inertiajs/vue3';
 
-defineProps ({listings: Array})
+defineProps({listings: Array})
 </script>
